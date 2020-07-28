@@ -1,0 +1,75 @@
+html {
+	--margin:4px;
+	color:#b3b3b3;
+	background:#f5f5f5;
+}
+
+body {
+	font:500 13px/20px sans-serif;
+	margin:calc(var(--margin)*2)
+}
+
+textarea {
+	font:400 1rem/1.12 sans-serif;
+	outline:0;
+	height:auto;
+	overflow:auto;
+	box-shadow:none;
+	padding:.38rem .5rem;
+	transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	border:1px solid #ccc;
+	border-radius:.25rem;
+	color:#495057;
+	background:#fff;
+}
+
+textarea:focus {
+	border-color:#007bff;
+	box-shadow:0 0 0 .15rem rgba(0,123,255,.25)
+}
+
+.split-view {
+	display:flex;
+	width:100%
+}
+
+.split-view textarea {
+	box-sizing:border-box;
+	width:100%;
+	min-width:50px;
+	max-width:100%;
+	min-height:4em;
+	max-height:calc(100vh - var(--margin)*7 - 25px)
+}
+
+.split-view button {
+	font:400 13px/17px Arial;
+	margin:0;
+	padding:1px 6px;
+	border-width:2px
+}
+
+.split-view .group {
+	line-height:0;
+	max-width:calc(100% - 50px - var(--margin)*7);
+	padding:var(--margin);
+	border:1px solid #000
+}
+
+.split-view .group:nth-child(1) textarea {
+	width:calc(50vw - var(--margin)*7);
+	resize:both
+}
+
+.split-view .group:nth-child(2) {
+	flex:auto
+}
+
+.split-view .group:nth-child(2) textarea {
+	min-height:calc(100% - var(--margin) - 23px);
+	resize:none
+}
+
+.split-view .group .controls {
+	margin-top:var(--margin)
+}
