@@ -14,11 +14,18 @@ textarea {
 	font: clamp(0.75rem, 2vw, 1rem)/1.5 sans-serif;
 	transition: box-shadow .2s ease-in-out;
 	box-sizing: border-box;
+	padding: 0.37rem 0.75rem;
 	outline: 1px solid transparent;
 	border: 1px solid #ced4da;
 	border-radius: 4px;
 	background: #fff;
 	color: #212529;
+}
+
+textarea::placeholder {
+	color: #7e7e7e;
+	transition: opacity .3s ease;
+	opacity: 1;
 }
 
 textarea:focus {
@@ -29,6 +36,11 @@ textarea:focus:hover {
 	box-shadow: 0 0 2px 2px #0d6efd40;
 	outline-color: #30303d;
 	border-color: #86b7fe;
+}
+
+textarea:focus::placeholder {
+	transition-duration: .2s;
+	opacity: 0;
 }
 
 #app {
