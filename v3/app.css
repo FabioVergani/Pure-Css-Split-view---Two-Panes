@@ -12,6 +12,13 @@ html {
 				display: flex;
 				height: 100%;
 				max-height: 100%;
+			 	--margin-right: 0.5rem;
+			 	> * {
+					margin: 0 var(--margin-right) 0 0;
+					&:last-child {
+						margin-right: 0;
+					}
+				}
 				> textarea {
 					transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 					font: 400 1rem/1.12 sans-serif;
@@ -27,20 +34,21 @@ html {
 					--min-width: 4rem;
 					&.original {
 						resize: horizontal;
-						margin: 0 0.5rem 0 0;
 						min-height: -webkit-fill-available;
 						min-width: var(--min-width);
-						width: 50%;
+						width: calc(50% - var(--margin-right));
 					}
 					&.changed {
 						resize: none;
-						margin: 0;
 						flex: 1 1 var(--min-width);
 					}
 					&:focus {
 						border-color: #495057;
-						box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+						box-shadow: 0 0 0 0.15rem #007bff40;
 					}
+				}
+				> .buttons-group {
+					align-self: center;
 				}
 			}
 		}
