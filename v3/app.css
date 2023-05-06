@@ -1,0 +1,48 @@
+html {
+	background: #ededed;
+	color: #b3b3b3;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	> body {
+		font: 500 13px/20px sans-serif;
+		flex: 1 1 0;
+		> main {
+			&.split-view {
+				display: flex;
+				height: 100%;
+				max-height: 100%;
+				> textarea {
+					transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+					font: 400 1rem/1.12 sans-serif;
+					padding: 0.38rem 0.5rem;
+					border-radius: 0.25rem;
+					border: 1px solid #ccc;
+					overflow: auto;
+					height: auto;
+					outline: 0;
+					box-shadow: none;
+					background-color: #fff;
+					color: #495057;
+					--min-width: 4rem;
+					&.original {
+						resize: horizontal;
+						margin: 0 0.5rem 0 0;
+						min-height: -webkit-fill-available;
+						min-width: var(--min-width);
+						width: 50%;
+					}
+					&.changed {
+						resize: none;
+						margin: 0;
+						flex: 1 1 var(--min-width);
+					}
+					&:focus {
+						border-color: #495057;
+						box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+					}
+				}
+			}
+		}
+	}
+}
